@@ -11,7 +11,7 @@
         <!--Random Number-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomNumber" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="RandomNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,9 @@
                                 <state key="normal" title="Get Result">
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="getRandomNumberButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="0K4-qc-ouD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -104,15 +107,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="getRandomNumberButton" destination="CbT-Ix-TJk" id="XFb-EX-fl1"/>
+                        <outlet property="maximumValueLabel" destination="5DE-UC-NzV" id="bs1-fl-bgq"/>
+                        <outlet property="minimumValueLabel" destination="mWl-8N-MEd" id="7sk-pu-4OO"/>
+                        <outlet property="randomValueLabel" destination="bCr-Ok-c7J" id="nnC-Vb-baC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="3"/>
+            <point key="canvasLocation" x="882" y="0.0"/>
         </scene>
         <!--Settings-->
         <scene sceneID="IoO-gb-VDT">
             <objects>
-                <viewController id="tvK-aM-hTj" sceneMemberID="viewController">
+                <viewController id="tvK-aM-hTj" customClass="SettingsViewController" customModule="RandomNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CpG-8z-7TB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,9 +151,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="69U-fZ-rgf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="AvI-j5-wbm"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cLS-hu-Avq"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="AvI-j5-wbm">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="tvK-aM-hTj" id="OJz-kz-Vf2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cLS-hu-Avq">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="tvK-aM-hTj" id="oSD-zJ-YqP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="maximumValueTF" destination="YzD-xV-dc3" id="jdD-dg-XC6"/>
+                        <outlet property="minimumValueTF" destination="Qg3-ES-X8b" id="WBV-7y-6qt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbF-ZQ-lF0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
